@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#172a31">
+    <meta name="description" content="Un jardín tranquilo, algunos juegos y un recordatorio de que alguien te apoya.">
+    <title>Un rinconcito para ti</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <script src="data.js" defer></script>
+    <script src="i18n.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="scene-glow" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Inicio: Un rinconcito para ti">
+        <span class="wordmark-mark" aria-hidden="true">✿</span>
+        <span>Un rinconcito <span class="wordmark-soft">para ti</span></span>
+      </a>
+      <div class="topbar-controls">
+        <button class="sound-toggle icon-button" id="sound-toggle" type="button" aria-pressed="true" aria-label="Apagar sonidos suaves">
+          <span aria-hidden="true">♫</span><span class="sound-label">Sonido: sí</span>
+        </button>
+        <button class="language-toggle icon-button" id="language-toggle" type="button" aria-label="Cambiar a inglés">EN</button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="welcome-screen" id="welcome-screen" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow">Un rinconcito de internet, solo para ti</p>
+          <h1 id="welcome-title">Un rinconcito <em>para ti</em></h1>
+          <p class="welcome-subtitle">Cuando necesites una pequeña pausa, ven aquí.</p>
+        </div>
+        <button class="welcome-flower" id="welcome-flower" type="button" aria-label="Abre la flor y entra a tu rinconcito">
+          <span class="flower-halo" aria-hidden="true"></span>
+          <span class="big-flower" aria-hidden="true">
+            <i class="petal petal-1"></i><i class="petal petal-2"></i><i class="petal petal-3"></i>
+            <i class="petal petal-4"></i><i class="petal petal-5"></i><i class="flower-heart"></i>
+          </span>
+          <span class="flower-prompt">toca la flor <span aria-hidden="true">✧</span></span>
+        </button>
+        <p class="welcome-note" id="welcome-note" aria-live="polite"></p>
+        <button class="primary-button enter-button" id="enter-button" type="button" hidden>Pasa, estás en casa <span aria-hidden="true">→</span></button>
+        <div class="welcome-stars" aria-hidden="true"><span>✦</span><span>·</span><span>✧</span><span>·</span><span>✦</span></div>
+      </section>
+
+      <div class="app-shell" id="app-shell" hidden>
+        <div class="welcome-back" id="welcome-back" hidden></div>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <button type="button" data-page="garden" class="nav-item active"><span aria-hidden="true">❀</span><span>Jardín</span></button>
+          <button type="button" data-page="letter" class="nav-item"><span aria-hidden="true">✉</span><span>Carta</span></button>
+          <button type="button" data-page="games" class="nav-item"><span aria-hidden="true">☆</span><span>Jueguitos</span></button>
+          <button type="button" data-page="about" class="nav-item"><span aria-hidden="true">♡</span><span>De ti</span></button>
+          <button type="button" data-page="night" class="nav-item"><span aria-hidden="true">☾</span><span>Noche</span></button>
+          <button type="button" data-page="memories" class="nav-item"><span aria-hidden="true">❋</span><span>Recuerdos</span></button>
+        </nav>
+        <section class="page-content" id="page-content" tabindex="-1" aria-live="polite"></section>
+      </div>
+    </main>
+    <footer class="site-footer" id="site-footer">
+      <p>Hecho con un poquito más de cariño <span aria-hidden="true">♡</span></p>
+    </footer>
+
+    <dialog class="message-dialog" id="message-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close icon-button" id="dialog-close" type="button" aria-label="Close message">×</button>
+      <span class="dialog-sparkle" aria-hidden="true">✦</span>
+      <p class="eyebrow" id="dialog-kicker">un pequeño recordatorio</p>
+      <h2 id="dialog-title">Para ti</h2>
+      <p class="dialog-message" id="dialog-message"></p>
+      <button class="text-button" id="dialog-done" type="button">Guardar este mensajito <span aria-hidden="true">♡</span></button>
+    </dialog>
+
+    <dialog class="confirm-dialog" id="reset-dialog" aria-labelledby="reset-title">
+      <p class="eyebrow">un pequeño aviso</p>
+      <h2 id="reset-title">¿Empezar de nuevo?</h2>
+      <p>Esto reiniciará tus flores, descubrimientos y progreso en los juegos en este dispositivo.</p>
+      <div class="dialog-actions">
+        <button class="secondary-button" id="reset-cancel" type="button">Conservar todo</button>
+        <button class="danger-button" id="reset-confirm" type="button">Reiniciar mi jardín</button>
+      </div>
+    </dialog>
+  </body>
+</html>
